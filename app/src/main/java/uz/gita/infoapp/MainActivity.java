@@ -1,7 +1,9 @@
 package uz.gita.infoapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -44,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
             goNext("Karim Benzema");
         });
 
+        findViewById(R.id.info).setOnClickListener(v ->{
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setMessage("Hi, I am Mirzaliyev Po'lat from Uzbekistan. I made this app as a homework that was given by \"Gita Academy\". I made this app for learning purposes, not for commercial purposes");
+            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+        });
 
     }
 
